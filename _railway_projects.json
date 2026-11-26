@@ -1,0 +1,74 @@
+[
+  {
+    "workspace": {
+      "id": "9f2f67f8-b59a-4203-af41-59dd88bb4887",
+      "name": "ivanpalmar0207's Projects"
+    },
+    "is_favorite": false,
+    "id": "d28dc868-5b5e-4831-a13e-46fb817ab642",
+    "name": "miraculous-spirit",
+    "createdAt": "2026-11-08T05:15:15.519Z",
+    "updatedAt": "2026-11-08T05:15:15.519Z",
+    "deletedAt": null,
+    "environments": {
+      "edges": [
+        {
+          "node": {
+            "id": "3d89ce44-4cd5-43ef-bee2-495a93effcd5",
+            "name": "production",
+            "canAccess": true
+          }
+        }
+      ]
+    },
+    "services": {
+      "edges": [
+        {
+          "node": {
+            "id": "4f21c2f2-a2c9-483e-bace-2cfd96cf6490",
+            "name": "Postgres"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "workspace": {
+      "id": "9f2f67f8-b59a-4203-af41-59dd88bb4887",
+      "name": "ivanpalmar0207's Projects"
+    },
+    "is_favorite": false,
+    "id": "d8aff96b-5fea-4c00-b805-709678a71468",
+    "name": "payblood",
+    "createdAt": "2026-10-18T04:42:53.893Z",
+    "updatedAt": "2026-11-08T05:04:21.429Z",
+    "deletedAt": "2026-11-10T05:04:21.309Z",
+    "environments": {
+      "edges": [
+        {
+          "node": {
+            "id": "8733dc7c-2fa6-43a8-96ba-86f86ba130c9",
+            "name": "production",
+            "canAccess": true
+          }
+        }
+      ]
+    },
+    "services": {
+      "edges": [
+        {
+          "node": {
+            "id": "066d5eab-b303-4d63-bd1d-092dd4f42d4e",
+            "name": "Postgres"
+          }
+        },
+        {
+          "node": {
+            "id": "c5a552d2-b8af-468a-9197-bf7006204f91",
+            "name": "payblood"
+          }
+        }
+      ]
+    }
+  }
+]
