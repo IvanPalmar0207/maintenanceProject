@@ -1,0 +1,98 @@
+<section class="container stack seccion form-page--wide">
+  <header class="row row--between row--wrap">
+    <div class="stack stack--sm">
+      <h1>Gestión del foro</h1>
+      <p class="muted">Crea, edita o elimina publicaciones del foro de la plataforma.</p>
+    </div>
+    <div class="field">
+      <label class="sr-only" for="buscar">Buscar publicación</label>
+      <input
+        id="buscar"
+        type="search"
+        placeholder="Buscar por título o contenido…"
+        [ngModel]="busqueda"
+        (ngModelChange)="onBuscar($event)"
+      />
+    </div>
+  </header>
+
+  <form class="card stack form-page--wide" [formGroup]="form" (ngSubmit)="guardar()" novalidate>
+    <h2>{{ editandoId() ? 'Editar publicación' : 'Nueva publicación' }}</h2>
+
+    <div class="field">
+      <label for="titulo">Título</label>
+      <input id="titulo" type="text" formControlName="titulo" placeholder="Resume el tema en una frase" />
+      @if (titulo.touched && titulo.hasError('required')) {
+        <span class="field__error">El título es obligatorio.</span>
+      }
+      @if (titulo.touched && titulo.hasError('minlength')) {
+        <span class="field__error">Ingresa al menos 5 caracteres.</span>
+      }
+    </div>
+
+    <div class="field">
+      <label for="contenido">Contenido</label>
+      <textarea id="contenido" formControlName="contenido" placeholder="Escribe el contenido de la publicación"></textarea>
+      @if (contenido.touched && contenido.hasError('required')) {
+        <span class="field__error">El contenido es obligatorio.</span>
+      }
+      @if (contenido.touched && contenido.hasError('minlength')) {
+        <span class="field__error">Ingresa al menos 10 caracteres.</span>
+      }
+    </div>
+
+    <div class="row">
+      <button type="submit" class="btn btn--primary" [disabled]="guardando()">
+        {{ editandoId() ? 'Guardar cambios' : 'Crear publicación' }}
+      </button>
+      @if (editandoId()) {
+        <button type="button" class="btn btn--ghost" (click)="cancelar()">Cancelar</button>
+      }
+    </div>
+  </form>
+
+  @if (cargando()) {
+    <div class="skeleton skeleton--media"></div>
+  } @else if (publicaciones().length === 0) {
+    <p class="muted">No hay publicaciones que coincidan con la búsqueda.</p>
+  } @else {
+    <div class="tabla-wrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Respuestas</th>
+            <th>Fecha</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (publicacion of publicaciones(); track publicacion.id) {
+            <tr>
+              <td>{{ publicacion.titulo }}</td>
+              <td>{{ publicacion.autor_nombre }}</td>
+              <td>{{ publicacion.respuestas_count }}</td>
+              <td>{{ publicacion.creado_en | date: 'short' }}</td>
+              <td class="row">
+                <button type="button" class="btn btn--ghost btn--sm" (click)="editar(publicacion)">
+                  Editar
+                </button>
+                <button type="button" class="btn btn--danger btn--sm" (click)="eliminar(publicacion)">
+                  Eliminar
+                </button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <app-paginador
+      [page]="page()"
+      [count]="total()"
+      [pageSize]="pageSize"
+      (cambiar)="cambiarPagina($event)"
+    />
+  }
+</section>

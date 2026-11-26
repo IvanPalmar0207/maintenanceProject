@@ -1,0 +1,76 @@
+<section class="container stack seccion">
+  <header class="row row--between row--wrap">
+    <div class="stack stack--sm">
+      <h1>Gestión de usuarios</h1>
+      <p class="muted">Administra roles y estado de las cuentas de la plataforma.</p>
+    </div>
+    <div class="field">
+      <label class="sr-only" for="buscar">Buscar usuario</label>
+      <input
+        id="buscar"
+        type="search"
+        placeholder="Buscar por correo o nombre…"
+        [ngModel]="busqueda"
+        (ngModelChange)="onBuscar($event)"
+      />
+    </div>
+  </header>
+
+  @if (cargando()) {
+    <div class="tabla-wrap">
+      <div class="skeleton skeleton--media"></div>
+    </div>
+  } @else if (usuarios().length === 0) {
+    <p class="muted">No hay usuarios que coincidan con la búsqueda.</p>
+  } @else {
+    <div class="tabla-wrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Correo</th>
+            <th>Nombre</th>
+            <th>Rol</th>
+            <th>Estado</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (usuario of usuarios(); track usuario.id) {
+            <tr>
+              <td>{{ usuario.email }}</td>
+              <td>{{ usuario.nombre_completo }}</td>
+              <td>
+                <select
+                  class="select select--sm"
+                  (change)="cambiarRol(usuario, $any($event.target).value)"
+                  [attr.aria-label]="'Rol de ' + usuario.email"
+                >
+                  @for (rol of roles; track rol) {
+                    <option [value]="rol" [selected]="rol === usuario.role">{{ rol | rol }}</option>
+                  }
+                </select>
+              </td>
+              <td>
+                <span [class]="usuario.is_active ? 'badge badge--ok' : 'badge'">
+                  {{ usuario.is_active ? 'Activa' : 'Inactiva' }}
+                </span>
+              </td>
+              <td>
+                <button type="button" class="btn btn--ghost btn--sm" (click)="cambiarEstado(usuario)">
+                  {{ usuario.is_active ? 'Desactivar' : 'Activar' }}
+                </button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <app-paginador
+      [page]="page()"
+      [count]="total()"
+      [pageSize]="pageSize"
+      (cambiar)="cambiarPagina($event)"
+    />
+  }
+</section>

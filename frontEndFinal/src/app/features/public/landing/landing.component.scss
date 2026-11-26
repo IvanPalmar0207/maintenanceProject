@@ -1,0 +1,367 @@
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+// --- Hero ------------------------------------------------------------------
+.hero {
+  padding: clamp(2rem, 5vw, 4.5rem) 0 clamp(2.5rem, 6vw, 5rem);
+
+  &__grid {
+    display: grid;
+    gap: $e-7;
+    align-items: center;
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+
+  &__titulo {
+    font-size: clamp(2.1rem, 1.4rem + 3.2vw, 3.5rem);
+    margin-top: $e-3;
+    letter-spacing: -0.03em;
+
+    span { color: $rojo; }
+  }
+
+  &__lead {
+    font-size: $fs-lg;
+    color: $carbon-suave;
+    max-width: 52ch;
+  }
+
+  &__acciones {
+    display: flex;
+    gap: $e-3;
+    flex-wrap: wrap;
+    margin: $e-5 0 $e-4;
+  }
+
+  &__sellos {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $e-2 $e-4;
+    padding: 0;
+    margin: 0;
+    color: $texto-secundario;
+    font-size: $fs-sm;
+
+    span { margin-right: $e-1; }
+  }
+
+  &__media {
+    position: relative;
+    margin: 0;
+    border-radius: $radio-xl;
+    overflow: hidden;
+    box-shadow: $sombra-lg;
+
+    img {
+      width: 100%;
+      height: clamp(320px, 46vw, 520px);
+      object-fit: cover;
+      transform: scale(1.06);
+    }
+  }
+
+  &__media-tarjeta {
+    position: absolute;
+    left: $e-4;
+    bottom: $e-4;
+    right: $e-4;
+    display: flex;
+    align-items: center;
+    gap: $e-3;
+    padding: $e-3 $e-4;
+    border-radius: $radio;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    box-shadow: $sombra;
+    max-width: 320px;
+
+    strong { display: block; font-size: $fs-sm; }
+    .muted { font-size: $fs-xs; }
+  }
+
+  &__media-icono { font-size: 1.4rem; }
+}
+
+// --- Encabezados de sección ------------------------------------------------
+.seccion__encabezado {
+  max-width: 64ch;
+  margin-bottom: $e-6;
+
+  &--fila {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: $e-4;
+    max-width: none;
+    flex-wrap: wrap;
+  }
+
+  h2 { margin: $e-1 0 $e-2; }
+}
+
+.seccion__eyebrow {
+  display: inline-block;
+  font-size: $fs-xs;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $rojo;
+}
+
+// --- Beneficios ------------------------------------------------------------
+.beneficio {
+  display: flex;
+  flex-direction: column;
+  gap: $e-2;
+
+  &__icono {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: $radio;
+    background: linear-gradient(140deg, $fondo-calido, $rosa-claro);
+    font-size: 1.5rem;
+    margin-bottom: $e-1;
+  }
+
+  p { margin: 0; }
+}
+
+// --- Cómo funciona (timeline) ---------------------------------------------
+.proceso {
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
+  background: linear-gradient(180deg, transparent, $fondo-calido 30%, $fondo-calido 70%, transparent);
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, transparent, $rosa-claro 12%, $rojo-suave 88%, transparent);
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: $e-6;
+    position: relative;
+    padding: $e-4 0;
+
+    &--invertido {
+      .timeline__media { order: 2; }
+      .timeline__texto { order: 1; text-align: right; }
+    }
+  }
+
+  &__media {
+    border-radius: $radio-lg;
+    overflow: hidden;
+    box-shadow: $sombra;
+    transition: transform $dur-lenta $ease, box-shadow $dur-lenta $ease;
+
+    img {
+      width: 100%;
+      height: clamp(220px, 26vw, 320px);
+      object-fit: cover;
+      transition: transform $dur-lenta $ease;
+    }
+  }
+
+  &__item {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover .timeline__media {
+        transform: translateY(-4px);
+        box-shadow: $sombra-lg;
+
+        img { transform: scale(1.04); }
+      }
+    }
+  }
+
+  &__texto {
+    display: flex;
+    flex-direction: column;
+    gap: $e-2;
+
+    h3 { margin: 0; font-size: $fs-xl; }
+    p { margin: 0 }
+  }
+
+  &__numero {
+    font-family: $fuente-titulo;
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 1;
+    color: $rojo;
+    opacity: 0.28;
+  }
+
+  &__punto {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: $blanco;
+    border: 4px solid $rojo;
+    box-shadow: $sombra-roja;
+  }
+}
+
+// --- Acompañamiento --------------------------------------------------------
+.acompanamiento {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $e-7;
+  align-items: center;
+
+  &__media {
+    margin: 0;
+    border-radius: $radio-xl;
+    overflow: hidden;
+    box-shadow: $sombra-lg;
+
+    img { width: 100%; height: clamp(300px, 38vw, 460px); object-fit: cover; }
+  }
+
+  &__texto {
+    h2 { margin: $e-1 0 $e-3; }
+    p { max-width: 52ch; }
+  }
+}
+
+// --- Noticias mini ---------------------------------------------------------
+.noticia-mini {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  &__imagen { width: 100%; height: 180px; object-fit: cover; }
+  &__cuerpo { display: flex; flex-direction: column; gap: $e-2; padding: $e-4; flex: 1 1 auto; }
+  h3, p { margin: 0; }
+  p { flex: 1 1 auto; }
+}
+
+// --- Recursos --------------------------------------------------------------
+.recursos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $e-4;
+}
+
+.recurso {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  gap: $e-3;
+  align-items: stretch;
+  background: $superficie-solida;
+  border: 1px solid $borde-suave;
+  border-radius: $radio-lg;
+  overflow: hidden;
+  box-shadow: $sombra-xs;
+  transition: transform $dur $ease, box-shadow $dur $ease;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover { transform: translateY(-3px); box-shadow: $sombra; }
+  }
+
+  &__foto { width: 100%; height: 100%; min-height: 180px; object-fit: cover; }
+
+  &__cuerpo {
+    display: flex;
+    flex-direction: column;
+    gap: $e-2;
+    padding: $e-4;
+
+    h3 { margin: 0; }
+    p { margin: 0; font-size: $fs-sm; flex: 1 1 auto; }
+  }
+}
+
+// --- CTA final -------------------------------------------------------------
+.cta-final {
+  position: relative;
+  margin-top: $e-8;
+  padding: clamp(3rem, 8vw, 6rem) 0;
+  overflow: hidden;
+  color: $blanco;
+
+  &__fondo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(120deg, rgba(226, 63, 64, 0.92), rgba(255, 86, 87, 0.72));
+  }
+
+  &__contenido {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $e-3;
+
+    h2 { color: $blanco; margin: 0; }
+    p { color: rgba(255, 255, 255, 0.94); margin: 0 0 $e-3; }
+  }
+
+  .btn--ghost {
+    color: $blanco;
+    border-color: rgba(255, 255, 255, 0.7);
+    &:hover { background: rgba(255, 255, 255, 0.16); color: $blanco; }
+  }
+}
+
+// --- Responsive ------------------------------------------------------------
+@include desde-tablet {
+  .hero__grid { grid-template-columns: 1fr; }
+  .hero__media { order: -1; }
+  .acompanamiento { grid-template-columns: 1fr; }
+
+  .timeline::before { left: 22px; }
+
+  .timeline__item {
+    grid-template-columns: 1fr;
+    gap: $e-3;
+    padding-left: 56px;
+
+    &--invertido {
+      .timeline__media { order: 0; }
+      .timeline__texto { order: 0; text-align: left; }
+    }
+  }
+
+  .timeline__punto { left: 22px; top: 28px; transform: translate(-50%, 0); }
+}
+
+@include desde-mobile {
+  .recurso { grid-template-columns: 1fr; }
+  .recurso__foto { min-height: 160px; max-height: 200px; }
+}

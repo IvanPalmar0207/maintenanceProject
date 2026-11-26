@@ -1,0 +1,316 @@
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: background $dur $ease, border-color $dur $ease, box-shadow $dur $ease;
+
+  &.is-scrolled {
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom-color: $borde-suave;
+    box-shadow: $sombra-xs;
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    gap: $e-4;
+    min-height: 68px;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: $e-2;
+    text-decoration: none;
+    color: $carbon;
+    flex: 0 0 auto;
+  }
+
+  &__logo {
+    display: block;
+    width: auto;
+    height: 56px;
+    max-height: 56px;
+    object-fit: contain;
+    flex: 0 0 auto;
+  }
+
+  &__marca {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+
+    strong { font-size: $fs-sm; }
+    small { font-size: 0.68rem; color: $texto-secundario; }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: $e-1;
+    margin-left: auto;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: $e-1;
+    padding: $e-2 $e-3;
+    border-radius: $radio-pill;
+    color: $carbon-suave;
+    font-weight: 550;
+    font-size: $fs-sm;
+    text-decoration: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: color $dur $ease, background $dur $ease;
+
+    &:hover { color: $rojo; background: $rojo-tinte; }
+
+    &.is-active {
+      color: $rojo;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: $e-3;
+        right: $e-3;
+        bottom: 2px;
+        height: 2px;
+        border-radius: 2px;
+        background: $rojo;
+        animation: subrayar $dur-lenta $ease both;
+      }
+    }
+
+    &--login { color: $carbon; }
+  }
+
+  &__caret {
+    font-size: 0.6rem;
+    transition: transform $dur $ease;
+
+    &.is-open { transform: rotate(180deg); }
+  }
+
+  &__dropdown { position: relative; }
+
+  &__menu {
+    position: absolute;
+    top: calc(100% + $e-2);
+    left: 0;
+    min-width: 210px;
+    padding: $e-2;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background: $superficie-solida;
+    border: 1px solid $borde-suave;
+    border-radius: $radio;
+    box-shadow: $sombra;
+    animation: menu-in $dur $ease both;
+
+    &--derecha { left: auto; right: 0; }
+  }
+
+  &__menu-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: $e-2 $e-3;
+    border-radius: $radio-sm;
+    border: none;
+    background: transparent;
+    color: $carbon-suave;
+    font: inherit;
+    font-size: $fs-sm;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background $dur $ease, color $dur $ease;
+
+    &:hover { background: $rosa-claro; color: $carbon; }
+  }
+
+  &__menu-salir {
+    color: $rojo-oscuro;
+
+    &:hover { background: $rojo-tinte; color: $rojo-oscuro; }
+  }
+
+  &__menu-etiqueta {
+    padding: $e-1 $e-3;
+    font-size: $fs-xs;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: $texto-secundario;
+  }
+
+  &__bell {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: $radio-pill;
+    border: 1px solid $borde-suave;
+    background: $blanco;
+    text-decoration: none;
+    transition: border-color $dur $ease, transform $dur $ease;
+
+    &:hover { border-color: $rojo-suave; }
+    @media (hover: hover) and (pointer: fine) {
+      &:hover { transform: translateY(-1px); }
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: $radio-pill;
+    background: $rojo;
+    color: $blanco;
+    font-size: 0.66rem;
+    display: grid;
+    place-items: center;
+  }
+
+  &__usuario {
+    display: flex;
+    align-items: center;
+    gap: $e-2;
+    padding: $e-1 $e-2 $e-1 $e-1;
+    border-radius: $radio-pill;
+    border: 1px solid $borde-suave;
+    background: $blanco;
+    cursor: pointer;
+    font: inherit;
+    transition: border-color $dur $ease;
+
+    &:hover { border-color: $rojo-suave; }
+  }
+
+  &__avatar {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: $rosa-claro;
+    color: $carbon;
+    font-weight: 700;
+    font-size: $fs-xs;
+  }
+
+  &__usuario-nombre {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: $fs-sm;
+  }
+
+  &__hamburguesa {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    margin-left: auto;
+    border: 1px solid $borde-suave;
+    border-radius: $radio-sm;
+    background: $blanco;
+    cursor: pointer;
+
+    span {
+      display: block;
+      height: 2px;
+      width: 20px;
+      margin-inline: auto;
+      background: $carbon;
+      border-radius: 2px;
+      transition: transform $dur $ease, opacity $dur $ease;
+    }
+
+    &.is-open {
+      span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      span:nth-child(2) { opacity: 0; }
+      span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    }
+  }
+
+  &__drawer {
+    border-top: 1px solid $borde-suave;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(14px);
+    animation: drawer-in $dur $ease both;
+    padding-bottom: $e-4;
+
+    .container { display: flex; flex-direction: column; gap: $e-3; padding-top: $e-3; }
+  }
+
+  &__drawer-usuario {
+    display: flex;
+    align-items: center;
+    gap: $e-3;
+
+    strong { display: block; }
+  }
+
+  &__drawer-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      display: block;
+      padding: $e-3 $e-2;
+      border-bottom: 1px solid $borde-suave;
+      color: $carbon;
+      font-weight: 550;
+      text-decoration: none;
+    }
+    a:hover { color: $rojo; }
+  }
+
+  &__drawer-acciones {
+    display: flex;
+    flex-direction: column;
+    gap: $e-2;
+  }
+}
+
+@keyframes subrayar {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes menu-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes drawer-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@include desde-tablet {
+  .nav__links { display: none; }
+  .nav__hamburguesa { display: flex; }
+}
