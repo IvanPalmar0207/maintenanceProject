@@ -1,0 +1,21 @@
+=== conteos SQLite ===
+24 objects imported automatically (use -v 2 for details).
+usuarios.Usuario=4
+usuarios.TokenRecuperacion=0
+---
+---
+denuncias.Denuncia=5
+denuncias.SeguimientoDenuncia=10
+---
+chat.Conversacion=5
+chat.Mensaje=6
+---
+noticias.Noticia=3
+---
+podcasts.Podcast=2
+---
+foro.Publicacion=2
+foro.Respuesta=2
+---
+notificaciones.Notificacion=10
+---

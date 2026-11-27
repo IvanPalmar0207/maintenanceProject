@@ -1,0 +1,707 @@
+[
+{
+  "model": "usuarios.usuario",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$afr9RPYKhpDwuqkIRoBGII$Mkthis58SpRadEC5Fl3EeoB2IKlFSJpSZ6/uKH59muE=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "usuario@proteccioninmediata.test",
+    "nombre_completo": "Valentina Gómez",
+    "telefono": "3001234567",
+    "documento": "1000000001",
+    "direccion": "",
+    "fecha_nacimiento": null,
+    "role": "USUARIO",
+    "is_active": true,
+    "is_staff": false,
+    "date_joined": "2026-11-07T20:08:50.238Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "usuarios.usuario",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$bBBYzBgZIt9DEVgYuLjBvp$vwFViF+CRarlZ3C1ZO27dLgnx043nOpNzjHVDevK2K4=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "profesional@proteccioninmediata.test",
+    "nombre_completo": "Dra. Camila Restrepo",
+    "telefono": "3007654321",
+    "documento": "1000000002",
+    "direccion": "",
+    "fecha_nacimiento": null,
+    "role": "PROFESIONAL",
+    "is_active": true,
+    "is_staff": false,
+    "date_joined": "2026-11-07T20:08:50.497Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "usuarios.usuario",
+  "pk": 12,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$g4KtW8hNvdxhiYS4CNALZ3$ouVS1StFsMiYv4KLho4DWshCprYsHh6YXYoG+/yR7Lg=",
+    "last_login": null,
+    "is_superuser": true,
+    "email": "admin@proteccioninmediata.test",
+    "nombre_completo": "Andrés Administrador",
+    "telefono": "3009998888",
+    "documento": "1000000003",
+    "direccion": "",
+    "fecha_nacimiento": null,
+    "role": "ADMINISTRADOR",
+    "is_active": true,
+    "is_staff": true,
+    "date_joined": "2026-11-07T20:08:50.743Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "usuarios.usuario",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$bXsQAGDlHFVR4qLFMp4rcb$bcEa2kBymDUm737CTX4Q34eU//fyxdV/nep9wkBC4HM=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "palmar.ivan0205@gmail.com",
+    "nombre_completo": "Ivan David Palmar Martinez asdadasd",
+    "telefono": "3157201170",
+    "documento": "1030533045",
+    "direccion": "",
+    "fecha_nacimiento": "2005-01-02",
+    "role": "USUARIO",
+    "is_active": true,
+    "is_staff": false,
+    "date_joined": "2026-11-08T01:44:19.820Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "denuncias.denuncia",
+  "pk": 5,
+  "fields": {
+    "creado_en": "2026-11-07T20:08:50.995Z",
+    "actualizado_en": "2026-11-07T20:08:50.995Z",
+    "codigo": "1ee6762b-efcc-434e-aa2b-3cb1cb2c7d2b",
+    "denunciante": 10,
+    "modalidad": "PUBLICA",
+    "tipo_situacion": "VIOLENCIA_INTRAFAMILIAR",
+    "descripcion": "[demo] Situación en el hogar: hechos ficticios de demostración.",
+    "ubicacion": "Bogotá",
+    "fecha_hechos": null,
+    "estado": "EN_PROCESO",
+    "profesional_asignado": 11
+  }
+},
+{
+  "model": "denuncias.denuncia",
+  "pk": 6,
+  "fields": {
+    "creado_en": "2026-11-07T20:08:50.996Z",
+    "actualizado_en": "2026-11-07T22:34:57.153Z",
+    "codigo": "65e747f6-5298-4938-aa80-edb4389933d3",
+    "denunciante": 10,
+    "modalidad": "ANONIMA",
+    "tipo_situacion": "ACOSO",
+    "descripcion": "[demo] Hechos de acoso: relato ficticio de demostración.",
+    "ubicacion": "",
+    "fecha_hechos": null,
+    "estado": "EN_PROCESO",
+    "profesional_asignado": 11
+  }
+},
+{
+  "model": "denuncias.denuncia",
+  "pk": 7,
+  "fields": {
+    "creado_en": "2026-11-07T20:21:04.937Z",
+    "actualizado_en": "2026-11-08T04:40:43.338Z",
+    "codigo": "dbb480ca-0340-4e09-9a00-40caf9cdaaf7",
+    "denunciante": 10,
+    "modalidad": "ANONIMA",
+    "tipo_situacion": "ACOSO",
+    "descripcion": "Verificacion E2E: relato ficticio de prueba automatizada.",
+    "ubicacion": "",
+    "fecha_hechos": null,
+    "estado": "FINALIZADA",
+    "profesional_asignado": 11
+  }
+},
+{
+  "model": "denuncias.denuncia",
+  "pk": 8,
+  "fields": {
+    "creado_en": "2026-11-08T02:48:10.967Z",
+    "actualizado_en": "2026-11-08T02:51:05.225Z",
+    "codigo": "12af3420-64fc-4460-9217-a5c9f85b5f38",
+    "denunciante": 13,
+    "modalidad": "PUBLICA",
+    "tipo_situacion": "ABUSO",
+    "descripcion": "Esto es una denuncia publica de prueba",
+    "ubicacion": "Soacha Cundinamarca",
+    "fecha_hechos": "2026-11-04",
+    "estado": "PENDIENTE",
+    "profesional_asignado": 11
+  }
+},
+{
+  "model": "denuncias.denuncia",
+  "pk": 9,
+  "fields": {
+    "creado_en": "2026-11-08T03:28:56.474Z",
+    "actualizado_en": "2026-11-08T04:04:47.996Z",
+    "codigo": "486740a6-ab73-4259-a092-c4640f837a81",
+    "denunciante": 13,
+    "modalidad": "PUBLICA",
+    "tipo_situacion": "ABUSO",
+    "descripcion": "Denuncia de prueba 2",
+    "ubicacion": "",
+    "fecha_hechos": null,
+    "estado": "FINALIZADA",
+    "profesional_asignado": 11
+  }
+},
+{
+  "model": "denuncias.seguimientodenuncia",
+  "pk": 7,
+  "fields": {
+    "creado_en": "2026-11-07T20:08:50.995Z",
+    "actualizado_en": "2026-11-07T20:08:50.995Z",
+    "denuncia": 5,
+    "autor": 10,
+    "estado_anterior": "",
+    "estado_nuevo": "PENDIENTE",
+    "observacion": "Denuncia registrada."
+  }
+},
+{
+  "model": "denuncias.seguimientodenuncia",
+  "pk": 8,
+  "fields": {
+    "creado_en": "2026-11-07T20:08:50.996Z",
+    "actualizado_en": "2026-11-07T20:08:50.996Z",
+    "denuncia": 5,
+    "autor": 11,
+    "estado_anterior": "PENDIENTE",
+    "estado_nuevo": "EN_PROCESO",
+    "observacion": "Caso asignado para acompañamiento."
+  }
+},
+{
+  "model": "denuncias.seguimientodenuncia",
+  "pk": 9,
+  "fields": {
+    "creado_en": "2026-11-07T20:21:04.950Z",
+    "actualizado_en": "2026-11-07T20:21:04.950Z",
+    "denuncia": 7,
+    "autor": 10,
+    "estado_anterior": "",
+    "estado_nuevo": "PENDIENTE",
+    "observacion": "Denuncia registrada."
+  }
+},
+{
+  "model": "denuncias.seguimientodenuncia",
+  "pk": 10,
+  "fields": {
+    "creado_en": "2026-11-07T22:34:57.162Z",
+    "actualizado_en": "2026-11-07T22:34:57.162Z",
+    "denuncia": 6,
+    "autor": 11,
+    "estado_anterior": "PENDIENTE",
+    "estado_nuevo": "EN_PROCESO",
+    "observacion": "Caso asignado a un profesional."
+  }
+},
+{
+  "model": "denuncias.seguimientodenuncia",
+  "pk": 11,
+  "fields": {
+    "creado_en": "2026-11-08T02:48:10.974Z",
+    "actualizado_en": "2026-11-08T02:48:10.974Z",
+    "denuncia": 8,
+    "autor": 13,
+    "estado_anterior": "",
+    "estado_nuevo": "PENDIENTE",
+    "observacion": "Denuncia registrada."
+  }
+},
+{
+  "model": "denuncias.seguimientodenuncia",
+  "pk": 12,
+  "fields": {
+    "creado_en": "2026-11-08T03:28:56.481Z",
+    "actualizado_en": "2026-11-08T03:28:56.481Z",
+    "denuncia": 9,
+    "autor": 13,
+    "estado_anterior": "",
+    "estado_nuevo": "PENDIENTE",
+    "observacion": "Denuncia registrada."
+  }
+},
+{
+  "model": "denuncias.seguimientodenuncia",
+  "pk": 13,
+  "fields": {
+    "creado_en": "2026-11-08T03:28:56.487Z",
+    "actualizado_en": "2026-11-08T03:28:56.487Z",
+    "denuncia": 9,
+    "autor": null,
+    "estado_anterior": "PENDIENTE",
+    "estado_nuevo": "EN_PROCESO",
+    "observacion": "Caso asignado automáticamente a Dra. Camila Restrepo."
+  }
+},
+{
+  "model": "denuncias.seguimientodenuncia",
+  "pk": 14,
+  "fields": {
+    "creado_en": "2026-11-08T04:03:49.494Z",
+    "actualizado_en": "2026-11-08T04:03:49.494Z",
+    "denuncia": 9,
+    "autor": 11,
+    "estado_anterior": "EN_PROCESO",
+    "estado_nuevo": "EN_PROCESO",
+    "observacion": "La denuncia se ha cerrado correctamente."
+  }
+},
+{
+  "model": "denuncias.seguimientodenuncia",
+  "pk": 15,
+  "fields": {
+    "creado_en": "2026-11-08T04:04:48.007Z",
+    "actualizado_en": "2026-11-08T04:04:48.007Z",
+    "denuncia": 9,
+    "autor": 11,
+    "estado_anterior": "EN_PROCESO",
+    "estado_nuevo": "FINALIZADA",
+    "observacion": ""
+  }
+},
+{
+  "model": "denuncias.seguimientodenuncia",
+  "pk": 16,
+  "fields": {
+    "creado_en": "2026-11-08T04:40:43.346Z",
+    "actualizado_en": "2026-11-08T04:40:43.346Z",
+    "denuncia": 7,
+    "autor": 11,
+    "estado_anterior": "PENDIENTE",
+    "estado_nuevo": "FINALIZADA",
+    "observacion": ""
+  }
+},
+{
+  "model": "chat.conversacion",
+  "pk": 1,
+  "fields": {
+    "creado_en": "2026-11-07T20:08:50.998Z",
+    "actualizado_en": "2026-11-07T20:21:05.076Z",
+    "denuncia": 5,
+    "participantes": [
+      11,
+      10
+    ]
+  }
+},
+{
+  "model": "chat.conversacion",
+  "pk": 2,
+  "fields": {
+    "creado_en": "2026-11-07T22:34:47.483Z",
+    "actualizado_en": "2026-11-07T22:34:47.483Z",
+    "denuncia": 7,
+    "participantes": [
+      11,
+      10
+    ]
+  }
+},
+{
+  "model": "chat.conversacion",
+  "pk": 3,
+  "fields": {
+    "creado_en": "2026-11-07T23:02:05.618Z",
+    "actualizado_en": "2026-11-07T23:02:05.618Z",
+    "denuncia": 6,
+    "participantes": [
+      11,
+      10
+    ]
+  }
+},
+{
+  "model": "chat.conversacion",
+  "pk": 4,
+  "fields": {
+    "creado_en": "2026-11-08T02:48:24.672Z",
+    "actualizado_en": "2026-11-08T04:11:31.648Z",
+    "denuncia": 8,
+    "participantes": [
+      13,
+      11
+    ]
+  }
+},
+{
+  "model": "chat.conversacion",
+  "pk": 5,
+  "fields": {
+    "creado_en": "2026-11-08T03:30:34.594Z",
+    "actualizado_en": "2026-11-08T04:10:01.208Z",
+    "denuncia": 9,
+    "participantes": [
+      13,
+      11
+    ]
+  }
+},
+{
+  "model": "chat.mensaje",
+  "pk": 1,
+  "fields": {
+    "creado_en": "2026-11-07T20:08:50.999Z",
+    "actualizado_en": "2026-11-07T20:08:50.999Z",
+    "conversacion": 1,
+    "remitente": 10,
+    "contenido": "Hola, necesito orientación sobre mi caso.",
+    "leido": true
+  }
+},
+{
+  "model": "chat.mensaje",
+  "pk": 2,
+  "fields": {
+    "creado_en": "2026-11-07T20:08:51.000Z",
+    "actualizado_en": "2026-11-07T20:08:51.000Z",
+    "conversacion": 1,
+    "remitente": 11,
+    "contenido": "Hola, estoy para acompañarte. ¿Cómo te sentís hoy?",
+    "leido": true
+  }
+},
+{
+  "model": "chat.mensaje",
+  "pk": 3,
+  "fields": {
+    "creado_en": "2026-11-07T20:21:05.067Z",
+    "actualizado_en": "2026-11-07T20:21:05.067Z",
+    "conversacion": 1,
+    "remitente": 10,
+    "contenido": "Mensaje E2E persistido",
+    "leido": true
+  }
+},
+{
+  "model": "chat.mensaje",
+  "pk": 4,
+  "fields": {
+    "creado_en": "2026-11-08T04:10:01.195Z",
+    "actualizado_en": "2026-11-08T04:10:01.195Z",
+    "conversacion": 5,
+    "remitente": 13,
+    "contenido": "Hola como estas?",
+    "leido": true
+  }
+},
+{
+  "model": "chat.mensaje",
+  "pk": 5,
+  "fields": {
+    "creado_en": "2026-11-08T04:11:09.053Z",
+    "actualizado_en": "2026-11-08T04:11:09.053Z",
+    "conversacion": 4,
+    "remitente": 13,
+    "contenido": "Hola, como estas?, vengo a reportar un caso",
+    "leido": true
+  }
+},
+{
+  "model": "chat.mensaje",
+  "pk": 6,
+  "fields": {
+    "creado_en": "2026-11-08T04:11:31.635Z",
+    "actualizado_en": "2026-11-08T04:11:31.635Z",
+    "conversacion": 4,
+    "remitente": 11,
+    "contenido": "Claro que si buen dia",
+    "leido": true
+  }
+},
+{
+  "model": "noticias.noticia",
+  "pk": 2,
+  "fields": {
+    "creado_en": "2026-11-07T20:08:50.989Z",
+    "actualizado_en": "2026-11-07T20:08:50.989Z",
+    "titulo": "Rutas de atención inmediata en tu ciudad",
+    "resumen": "Conocé los canales disponibles para pedir ayuda.",
+    "contenido": "Protección Inmediata SC centraliza las rutas de atención para que encuentres acompañamiento profesional sin exponer tu identidad si no lo deseás.",
+    "categoria": "INSTITUCIONAL",
+    "imagen": "",
+    "destacada": false,
+    "autor": 12,
+    "publicado": true,
+    "fecha_publicacion": "2026-11-07T20:08:50.989Z"
+  }
+},
+{
+  "model": "noticias.noticia",
+  "pk": 3,
+  "fields": {
+    "creado_en": "2026-11-07T20:08:50.990Z",
+    "actualizado_en": "2026-11-07T20:08:50.990Z",
+    "titulo": "Cómo identificar una situación de violencia intrafamiliar",
+    "resumen": "Señales de alerta y primeros pasos.",
+    "contenido": "Reconocer las señales es el primer paso. Esta guía resume indicadores y recuerda que denunciar de forma anónima también es posible.",
+    "categoria": "INSTITUCIONAL",
+    "imagen": "",
+    "destacada": false,
+    "autor": 12,
+    "publicado": true,
+    "fecha_publicacion": "2026-11-07T20:08:50.990Z"
+  }
+},
+{
+  "model": "noticias.noticia",
+  "pk": 4,
+  "fields": {
+    "creado_en": "2026-11-07T20:08:50.990Z",
+    "actualizado_en": "2026-11-07T22:36:30.735Z",
+    "titulo": "El acompañamiento psicosocial durante el proceso",
+    "resumen": "Qué esperar de un profesional de apoyo.",
+    "contenido": "Un profesional puede orientarte, escucharte y ayudarte a tomar decisiones sin presionarte.",
+    "categoria": "INSTITUCIONAL",
+    "imagen": "noticias/portadas/banner_6.jpg",
+    "destacada": false,
+    "autor": 12,
+    "publicado": true,
+    "fecha_publicacion": "2026-11-07T20:08:50.990Z"
+  }
+},
+{
+  "model": "podcasts.podcast",
+  "pk": 2,
+  "fields": {
+    "creado_en": "2026-11-07T20:08:50.990Z",
+    "actualizado_en": "2026-11-07T21:13:39.698Z",
+    "titulo": "Episodio 1: Romper el silencio",
+    "descripcion": "Conversación sobre el primer paso para pedir ayuda.",
+    "programa": "Voces que acompañan",
+    "plataforma": "SPOTIFY",
+    "enlace": "https://open.spotify.com/episode/demo-episodio-1",
+    "portada": "",
+    "autor": 12,
+    "publicado": true,
+    "fecha_publicacion": "2026-11-07T20:08:50.990Z"
+  }
+},
+{
+  "model": "podcasts.podcast",
+  "pk": 3,
+  "fields": {
+    "creado_en": "2026-11-07T20:08:50.991Z",
+    "actualizado_en": "2026-11-07T21:13:39.699Z",
+    "titulo": "Episodio 2: Redes de apoyo",
+    "descripcion": "Cómo construir una red de apoyo segura.",
+    "programa": "Voces que acompañan",
+    "plataforma": "YOUTUBE",
+    "enlace": "https://www.youtube.com/watch?v=demo-episodio-2",
+    "portada": "",
+    "autor": 12,
+    "publicado": true,
+    "fecha_publicacion": "2026-11-07T20:08:50.991Z"
+  }
+},
+{
+  "model": "foro.publicacion",
+  "pk": 2,
+  "fields": {
+    "creado_en": "2026-11-07T20:08:50.992Z",
+    "actualizado_en": "2026-11-07T20:08:50.992Z",
+    "titulo": "Bienvenida al foro de acompañamiento",
+    "contenido": "Este es un espacio seguro. Respetemos a quienes comparten.",
+    "autor": 10
+  }
+},
+{
+  "model": "foro.publicacion",
+  "pk": 3,
+  "fields": {
+    "creado_en": "2026-11-07T20:08:50.993Z",
+    "actualizado_en": "2026-11-07T20:08:50.993Z",
+    "titulo": "¿Cómo contarle a una persona de confianza?",
+    "contenido": "Comparto mi experiencia pidiendo ayuda por primera vez.",
+    "autor": 10
+  }
+},
+{
+  "model": "foro.respuesta",
+  "pk": 2,
+  "fields": {
+    "creado_en": "2026-11-07T20:08:50.993Z",
+    "actualizado_en": "2026-11-07T20:08:50.993Z",
+    "publicacion": 2,
+    "autor": 10,
+    "contenido": "Gracias por compartir, a mí me pasó algo parecido."
+  }
+},
+{
+  "model": "foro.respuesta",
+  "pk": 3,
+  "fields": {
+    "creado_en": "2026-11-07T20:08:50.994Z",
+    "actualizado_en": "2026-11-07T20:08:50.994Z",
+    "publicacion": 3,
+    "autor": 10,
+    "contenido": "Gracias por compartir, a mí me pasó algo parecido."
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": 6,
+  "fields": {
+    "creado_en": "2026-11-07T20:21:04.956Z",
+    "actualizado_en": "2026-11-07T20:21:04.956Z",
+    "usuario": 10,
+    "titulo": "Denuncia registrada",
+    "mensaje": "Tu denuncia DBB480CA fue registrada correctamente.",
+    "tipo": "DENUNCIA",
+    "url": "/usuario/denuncias/7",
+    "leida": false
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": 7,
+  "fields": {
+    "creado_en": "2026-11-08T02:48:10.980Z",
+    "actualizado_en": "2026-11-08T02:48:10.980Z",
+    "usuario": 13,
+    "titulo": "Denuncia registrada",
+    "mensaje": "Tu denuncia 12AF3420 fue registrada correctamente.",
+    "tipo": "DENUNCIA",
+    "url": "/usuario/denuncias/8",
+    "leida": true
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": 8,
+  "fields": {
+    "creado_en": "2026-11-08T03:28:56.495Z",
+    "actualizado_en": "2026-11-08T03:28:56.495Z",
+    "usuario": 13,
+    "titulo": "Denuncia registrada",
+    "mensaje": "Tu denuncia 486740A6 fue registrada correctamente.",
+    "tipo": "DENUNCIA",
+    "url": "/usuario/denuncias/9",
+    "leida": true
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": 9,
+  "fields": {
+    "creado_en": "2026-11-08T03:28:56.500Z",
+    "actualizado_en": "2026-11-08T03:28:56.500Z",
+    "usuario": 11,
+    "titulo": "Nuevo caso asignado",
+    "mensaje": "Se te asignó la denuncia 486740A6.",
+    "tipo": "DENUNCIA",
+    "url": "/profesional/denuncias/9",
+    "leida": false
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": 10,
+  "fields": {
+    "creado_en": "2026-11-08T04:03:49.501Z",
+    "actualizado_en": "2026-11-08T04:03:49.501Z",
+    "usuario": 13,
+    "titulo": "Tu denuncia fue actualizada",
+    "mensaje": "El estado de la denuncia 486740A6 ahora es En proceso.",
+    "tipo": "ESTADO",
+    "url": "/usuario/denuncias/9",
+    "leida": false
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": 11,
+  "fields": {
+    "creado_en": "2026-11-08T04:04:48.014Z",
+    "actualizado_en": "2026-11-08T04:04:48.014Z",
+    "usuario": 13,
+    "titulo": "Tu denuncia fue actualizada",
+    "mensaje": "El estado de la denuncia 486740A6 ahora es Completada.",
+    "tipo": "ESTADO",
+    "url": "/usuario/denuncias/9",
+    "leida": false
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": 12,
+  "fields": {
+    "creado_en": "2026-11-08T04:10:01.253Z",
+    "actualizado_en": "2026-11-08T04:10:01.253Z",
+    "usuario": 11,
+    "titulo": "Nuevo mensaje",
+    "mensaje": "Recibiste un mensaje en la conversación de la denuncia 486740A6.",
+    "tipo": "MENSAJE",
+    "url": "/chat/5",
+    "leida": false
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": 13,
+  "fields": {
+    "creado_en": "2026-11-08T04:11:09.076Z",
+    "actualizado_en": "2026-11-08T04:11:09.076Z",
+    "usuario": 11,
+    "titulo": "Nuevo mensaje",
+    "mensaje": "Recibiste un mensaje en la conversación de la denuncia 12AF3420.",
+    "tipo": "MENSAJE",
+    "url": "/chat/4",
+    "leida": false
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": 14,
+  "fields": {
+    "creado_en": "2026-11-08T04:11:31.657Z",
+    "actualizado_en": "2026-11-08T04:11:31.657Z",
+    "usuario": 13,
+    "titulo": "Nuevo mensaje",
+    "mensaje": "Recibiste un mensaje en la conversación de la denuncia 12AF3420.",
+    "tipo": "MENSAJE",
+    "url": "/chat/4",
+    "leida": false
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": 15,
+  "fields": {
+    "creado_en": "2026-11-08T04:40:43.353Z",
+    "actualizado_en": "2026-11-08T04:40:43.353Z",
+    "usuario": 10,
+    "titulo": "Tu denuncia fue actualizada",
+    "mensaje": "El estado de la denuncia DBB480CA ahora es Completada.",
+    "tipo": "ESTADO",
+    "url": "/usuario/denuncias/7",
+    "leida": false
+  }
+}
+]
